@@ -16,7 +16,17 @@
   <link rel="stylesheet" href="./assets/compiled/css/app.css">
   <link rel="stylesheet" href="./assets/compiled/css/app-dark.css">
 </head>
+<style>
+        .back-icon {
+        font-size: 24px;
+        color: #61aeff; 
+        cursor: pointer;
+    }
 
+    .back-icon:hover {
+        color: #0056b3;
+    }
+</style>
 <body>
     <script src="assets/static/js/initTheme.js"></script>
     <div id="app">
@@ -63,7 +73,7 @@
     <div class="sidebar-menu">
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
-            
+           
             <li
             class="sidebar-item">
             <a href="index.html" class='sidebar-link'>
@@ -73,23 +83,39 @@
         </li>
         <li
         class="sidebar-item">
+        <a href="pengajuan.html" class='sidebar-link'>
+            <i class="bi bi-file-text"></i>
+            <span>Pengajuan</span>
+        </a>
+    </li>
+    
+    <li
+    class="sidebar-item">
+    <a href="tambah-jadwal.html" class='sidebar-link'>
+        <i class="bi bi-calendar"></i>
+        <span>Jadwal</span>
+    </a>
+</li>
+
+        <li
+        class="sidebar-item">
         <a href="ringkasanabsen.html" class='sidebar-link'>
             <i class="bi bi-journal-check"></i>
             <span>Ringkasan Absen</span>
         </a>
     </li>
-    <li
-    class="sidebar-item">
-    <a href="managementpengguna.html" class='sidebar-link'>
-        <i class="bi bi-journal-check"></i>
-        <span>Management Pengguna</span>
-    </a>
+<li
+class="sidebar-item">
+<a href="nilai.html" class='sidebar-link'>
+    <i class="bi bi-list-task"></i>
+    <span>Nilai</span>
+</a>
 </li>
     <li
     class="sidebar-item">
-    <a href="notif.html" class='sidebar-link'>
-        <i class="bi bi-bell"></i>
-        <span>Notifikasi</span>
+    <a href="profil.html" class='sidebar-link'>
+        <i class="bi bi-person"></i>
+        <span>Profil</span>
     </a>
     </li>
         <li
@@ -109,156 +135,85 @@
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
-
-           <!-- Pengajuan Magang -->
-<div class="container">
-    <h2>Pengajuan Magang</h2>
-<br>
-    <!-- Input Pencarian & Filter -->
-    <div style="margin-bottom: 10px;">
-        <input type="text" id="searchInput" placeholder="Cari nama siswa atau jurusan..." onkeyup="searchSiswa()" style="padding: 5px; width: 250px;">
-        <select id="statusFilter" onchange="filterStatus()" style="padding: 5px; margin-left: 10px;">
-            <option value="Semua">Semua Status</option>
-            <option value="Menunggu">Menunggu</option>
-            <option value="Diterima">Diterima</option>
-            <option value="Ditolak">Ditolak</option>
-        </select>
-    </div>
-
-    <!-- Tabel Pengajuan -->
-    <table cellspacing="0" cellpadding="8" width="100%">
-        <thead>
-            <tr style="background-color: #f2f2f2; text-align: left;">
-                <th>Nama Siswa</th>
-                <th>Asal Sekolah</th>
-                <th>Jurusan</th>
-                <th>Tanggal Mulai</th>
-                <th>Tanggal Selesai</th>
-                <th>Status</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody id="pengajuanTable">
-            <!-- Data siswa akan diisi oleh JavaScript -->
-        </tbody>
-    </table>
-<br><br>
-    <footer>
-        <div class="footer clearfix mb-0 text-muted">
-            <div class="float-start">
-                <p>2025 &copy; SMKN 1 SUBANG</p>
-            </div>
-            <div class="float-end">
-                <p>Create by RPL <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span></p>
+            <body>
+                <i class="bi bi-arrow-left-circle back-icon" onclick="goToSettings()"></i> <!-- Ikon panah -->
+            
+                <script>
+                    function goToSettings() {
+                        window.location.href = "pengaturan.html"; // Arahkan pengguna ke halaman pengaturan
+                    }
+                </script>
+      </body>
+       <br>     
+            <!-- Manajemen Akses -->
+<div class="container mt-4">
+    <h2 class="fw-bold">Manajemen Akses</h2>
+    <button class="btn btn-primary mb-3" id="btnTambahPeran">Tambah Peran</button>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="fw-bold">Pembimbing</h5>
+            <p>Mengelola dan menilai anak magang</p>
+            <strong>Hak akses:</strong>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="checkbox" checked> Lihat data magang<br>
+                    <input type="checkbox" checked> Manajemen Jadwal<br>
+                </div>
+                <div class="col-md-6">
+                    <input type="checkbox" checked> Input penilaian<br>
+                    <input type="checkbox" checked> Laporan magang
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="fw-bold">Siswa</h5>
+            <p>Hanya dapat melihat data</p>
+            <strong>Hak akses:</strong>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="checkbox" checked> Lihat data magang<br>
+                    <input type="checkbox" checked> Lihat laporan
+                </div>
+                <div class="col-md-6">
+                    <input type="checkbox" checked> Lihat jadwal
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
-    // Data dummy pengajuan magang
-    let pengajuanList = [
-        { nama: "Mamah Subang", sekolah: "SMKN 1 Subang", jurusan: "Rekayasa Perangkat Lunak", mulai: "15-01-2025", selesai: "01-06-2025", status: "Menunggu" },
-        { nama: "Aa Subang", sekolah: "SMKN 1 Subang", jurusan: "Rekayasa Perangkat Lunak", mulai: "15-01-2025", selesai: "01-06-2025", status: "Diterima" },
-        { nama: "Bapak Subang", sekolah: "SMKN 1 Subang", jurusan: "Rekayasa Perangkat Lunak", mulai: "15-01-2025", selesai: "01-06-2025", status: "Ditolak" }
-    ];
-
-    // Fungsi untuk menampilkan data di tabel
-    function renderTable() {
-        let tableBody = document.getElementById("pengajuanTable");
-        tableBody.innerHTML = "";
-
-        pengajuanList.forEach((siswa, index) => {
-            let row = `<tr>
-                <td>${siswa.nama}</td>
-                <td>${siswa.sekolah}</td>
-                <td>${siswa.jurusan}</td>
-                <td>${siswa.mulai}</td>
-                <td>${siswa.selesai}</td>
-                <td>${siswa.status}</td>
-                <td>
-                    ${siswa.status === "Menunggu" ? `
-                        <button onclick="updateStatus(${index}, 'Diterima')">Terima</button>
-                        <button onclick="updateStatus(${index}, 'Ditolak')">Tolak</button>
-                    ` : ""}
-                </td>
-            </tr>`;
-            tableBody.innerHTML += row;
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            alert("Hak akses " + (this.checked ? "diaktifkan" : "dinonaktifkan"));
         });
-    }
-
-    // Fungsi untuk update status pengajuan
-    function updateStatus(index, status) {
-        pengajuanList[index].status = status;
-        renderTable();
-    }
-
-    // Fungsi untuk pencarian siswa berdasarkan nama atau jurusan
-    function searchSiswa() {
-        let input = document.getElementById("searchInput").value.toLowerCase();
-        let tableBody = document.getElementById("pengajuanTable");
-        tableBody.innerHTML = "";
-
-        pengajuanList.forEach((siswa, index) => {
-            if (siswa.nama.toLowerCase().includes(input) || siswa.jurusan.toLowerCase().includes(input)) {
-                let row = `<tr>
-                    <td>${siswa.nama}</td>
-                    <td>${siswa.sekolah}</td>
-                    <td>${siswa.jurusan}</td>
-                    <td>${siswa.mulai}</td>
-                    <td>${siswa.selesai}</td>
-                    <td>${siswa.status}</td>
-                    <td>
-                        ${siswa.status === "Menunggu" ? `
-                            <button onclick="updateStatus(${index}, 'Diterima')">Terima</button>
-                            <button onclick="updateStatus(${index}, 'Ditolak')">Tolak</button>
-                        ` : ""}
-                    </td>
-                </tr>`;
-                tableBody.innerHTML += row;
-            }
-        });
-    }
-
-    // Fungsi untuk filter status pengajuan
-    function filterStatus() {
-        let status = document.getElementById("statusFilter").value;
-        let tableBody = document.getElementById("pengajuanTable");
-        tableBody.innerHTML = "";
-
-        pengajuanList.forEach((siswa, index) => {
-            if (status === "Semua" || siswa.status === status) {
-                let row = `<tr>
-                    <td>${siswa.nama}</td>
-                    <td>${siswa.sekolah}</td>
-                    <td>${siswa.jurusan}</td>
-                    <td>${siswa.mulai}</td>
-                    <td>${siswa.selesai}</td>
-                    <td>${siswa.status}</td>
-                    <td>
-                        ${siswa.status === "Menunggu" ? `
-                            <button onclick="updateStatus(${index}, 'Diterima')">Terima</button>
-                            <button onclick="updateStatus(${index}, 'Ditolak')">Tolak</button>
-                        ` : ""}
-                    </td>
-                </tr>`;
-                tableBody.innerHTML += row;
-            }
-        });
-    }
-
-    // Tampilkan data saat pertama kali halaman dimuat
-    renderTable();
+    });
 </script>
 
-<script src="assets/static/js/components/dark.js"></script>
+
+            <footer>
+    <div class="footer clearfix mb-0 text-muted">
+        <div class="float-start">
+            <p>2025 &copy; SMKN 1 SUBANG</p>
+        </div>
+        <div class="float-end">
+            <p>Create by RPL <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span></p>
+        </div>
+    </div>
+</footer>
+        </div>
+    </div>
+    <script src="assets/static/js/components/dark.js"></script>
     <script src="assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     
     
     <script src="assets/compiled/js/app.js"></script>
     
 
-
+    
 <script src="assets/extensions/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
 <script src="assets/extensions/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
 <script src="assets/extensions/filepond-plugin-image-crop/filepond-plugin-image-crop.min.js"></script>
@@ -269,8 +224,6 @@
 <script src="assets/extensions/filepond/filepond.js"></script>
 <script src="assets/extensions/toastify-js/src/toastify.js"></script>
 <script src="assets/static/js/pages/filepond.js"></script>
-
-
 
 </body>
 
