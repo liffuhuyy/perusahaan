@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>Dashboard - Perusahaan Dashboard</title>
     
     
     
@@ -65,7 +65,7 @@
     <div class="sidebar-menu">
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
-            
+           
             <li
             class="sidebar-item">
             <a href="index.html" class='sidebar-link'>
@@ -73,6 +73,20 @@
                 <span>Dashboard</span>
             </a>
         </li>
+        <li
+        class="sidebar-item">
+        <a href="pengajuan.html" class='sidebar-link'>
+            <i class="bi bi-gear"></i>
+            <span>Pengajuan</span>
+        </a>
+    </li>
+    <li
+    class="sidebar-item">
+    <a href="tambah-jadwal.html" class='sidebar-link'>
+        <i class="bi bi-gear"></i>
+        <span>Jadwal</span>
+    </a>
+</li>
         <li
         class="sidebar-item">
         <a href="ringkasanabsen.html" class='sidebar-link'>
@@ -87,11 +101,18 @@
         <span>Management Pengguna</span>
     </a>
 </li>
+<li
+class="sidebar-item">
+<a href="nilai.html" class='sidebar-link'>
+    <i class="bi bi-gear"></i>
+    <span>Nilai</span>
+</a>
+</li>
     <li
     class="sidebar-item">
     <a href="notif.html" class='sidebar-link'>
         <i class="bi bi-bell"></i>
-        <span>Notifikasi</span>
+        <span>Profil</span>
     </a>
     </li>
         <li
@@ -114,142 +135,140 @@
     <div class="page-heading">
         <h3>Dashboard</h3>
     </div>
-    
-    <div class="page-content">
-        <section class="row">
-            <div class="col-3">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <div class="stats-icon blue mb-2">
-                                    <i class="iconly-boldTick-Square"></i>
-                                </div>
-                                <h6 class="text-muted font-semibold">Hadir</h6>
-                                <h6 class="font-extrabold mb-0">200</h6>
+
+<div class="page-content">
+    <section class="row">
+        <!-- Statistik Kehadiran -->
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <div class="card text-center">
+                        <div class="card-body p-2">
+                            <div class="stats-icon blue mb-1">
+                                <i class="iconly-boldTick-Square"></i>
                             </div>
+                            <h6 class="text-muted">Hadir</h6>
+                            <h6 class="font-extrabold mb-0">200</h6>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <div class="stats-icon orange mb-2">
-                                    <i class="iconly-boldShield-Done"></i>
-                                </div>
-                                <h6 class="text-muted font-semibold">Izin</h6>
-                                <h6 class="font-extrabold mb-0">30</h6>
+                </div>
+                <div class="col-12 mb-2">
+                    <div class="card text-center">
+                        <div class="card-body p-2">
+                            <div class="stats-icon orange mb-1">
+                                <i class="iconly-boldShield-Done"></i>
                             </div>
+                            <h6 class="text-muted">Izin</h6>
+                            <h6 class="font-extrabold mb-0">30</h6>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <div class="stats-icon red mb-2">
-                                    <i class="iconly-boldClose-Square"></i>
-                                </div>
-                                <h6 class="text-muted font-semibold">Sakit</h6>
-                                <h6 class="font-extrabold mb-0">15</h6>
+                </div>
+                <div class="col-12 mb-2">
+                    <div class="card text-center">
+                        <div class="card-body p-2">
+                            <div class="stats-icon red mb-1">
+                                <i class="iconly-boldClose-Square"></i>
                             </div>
+                            <h6 class="text-muted">Sakit</h6>
+                            <h6 class="font-extrabold mb-0">15</h6>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <div class="stats-icon dark mb-2">
-                                    <i class="iconly-boldDanger"></i>
-                                </div>
-                                <h6 class="text-muted font-semibold" style="font-size: 0.60rem;">Tanpa Keterangan</h6>
-                                <h6 class="font-extrabold mb-0">5</h6>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="stats-icon dark mb-2">
+                                <i class="iconly-boldDanger"></i>
                             </div>
+                            <h6 class="text-muted font-semibold" style="font-size: 0.8rem;">Tanpa Keterangan</h6>
+                            <h6 class="font-extrabold mb-0">5</h6>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-9">
-                <div class="row">
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-4 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                        <div class="stats-icon purple mb-2">
-                                            <i class="iconly-boldShow"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                        <h6 class="text-muted font-semibold">Total Siswa</h6>
-                                        <h6 class="font-extrabold mb-0">380</h6>
-                                    </div>
-                                </div>
+        </div>
+
+        <!-- Statistik Umum -->
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-3 mb-2">
+                    <div class="card text-center">
+                        <div class="card-body p-2">
+                            <div class="stats-icon purple mb-1">
+                                <i class="iconly-boldShow"></i>
                             </div>
+                            <h6 class="text-muted">Total Siswa</h6>
+                            <h6 class="font-extrabold mb-0">380</h6>
                         </div>
                     </div>
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-4 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                        <div class="stats-icon blue mb-2">
-                                            <i class="iconly-boldProfile"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                        <h6 class="text-muted font-semibold">Perusahaan Partner</h6>
-                                        <h6 class="font-extrabold mb-0">100</h6>
-                                    </div>
-                                </div>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <div class="card text-center" id="data-siswa-card" style="cursor: pointer;">
+                        <div class="card-body p-2">
+                            <div class="stats-icon blue mb-1">
+                                <i class="iconly-boldProfile"></i>
                             </div>
+                            <h6 class="text-muted">Data Siswa</h6>
+                            <h6 class="font-extrabold mb-0">100</h6>
                         </div>
                     </div>
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-4 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                        <div class="stats-icon green mb-2">
-                                            <i class="iconly-boldGraph"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                        <h6 class="text-muted font-semibold">Server Uptime</h6>
-                                        <h6 class="font-extrabold mb-0">95.2%</h6>
-                                    </div>
-                                </div>
+                </div>                
+                <div class="col-md-3 mb-2">
+                    <div class="card text-center">
+                        <div class="card-body p-2">
+                            <div class="stats-icon green mb-1">
+                                <i class="iconly-boldGraph"></i>
                             </div>
+                            <h6 class="text-muted">Uptime</h6>
+                            <h6 class="font-extrabold mb-0">95.2%</h6>
                         </div>
                     </div>
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-4 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                        <div class="stats-icon red mb-2">
-                                            <i class="iconly-boldBookmark"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                        <h6 class="text-muted font-semibold">Kehadiran Hari Ini</h6>
-                                        <h6 class="font-extrabold mb-0">250</h6>
-                                    </div>
-                                </div>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <div class="card text-center">
+                        <div class="card-body p-2">
+                            <div class="stats-icon red mb-1">
+                                <i class="iconly-boldBookmark"></i>
                             </div>
+                            <h6 class="text-muted">Hadir Hari Ini</h6>
+                            <h6 class="font-extrabold mb-0">250</h6>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Grafik Kehadiran Mingguan</h4>
-                            </div>
-                            <div class="card-body">
-                                <div id="chart-profile-visit"></div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6>Grafik Kehadiran</h6>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Grafik Kehadiran Mingguan</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="chart-profile-visit"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
-</div>
+
+<script>
+    document.getElementById("data-siswa-card").onclick = function() {
+        document.getElementById("dataSiswaModal").style.display = "block";
+    };
+    document.querySelector(".close").onclick = function() {
+        document.getElementById("dataSiswaModal").style.display = "none";
+    };
+</script><script>
+    document.getElementById("data-siswa-card").addEventListener("click", function() {
+        window.location.href = "tampilan-datasiswa.html"; // Ganti dengan nama file halaman data siswa
+    });
+</script>
+
 
                         
 </footer>
