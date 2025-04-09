@@ -18,7 +18,17 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+<style> 
+    .back-icon {
+        font-size: 24px;
+        color: #61aeff; 
+        cursor: pointer;
+    }
 
+    .back-icon:hover {
+        color: #0056b3;
+    }
+</style>
 <body>
     <script src="assets/static/js/initTheme.js"></script>
     <div id="app">
@@ -76,17 +86,19 @@
         <li
         class="sidebar-item">
         <a href="pengajuan.html" class='sidebar-link'>
-            <i class="bi bi-gear"></i>
+            <i class="bi bi-file-text"></i>
             <span>Pengajuan</span>
         </a>
     </li>
+    
     <li
     class="sidebar-item">
     <a href="tambah-jadwal.html" class='sidebar-link'>
-        <i class="bi bi-gear"></i>
+        <i class="bi bi-calendar"></i>
         <span>Jadwal</span>
     </a>
 </li>
+
         <li
         class="sidebar-item">
         <a href="ringkasanabsen.html" class='sidebar-link'>
@@ -94,24 +106,17 @@
             <span>Ringkasan Absen</span>
         </a>
     </li>
-    <li
-    class="sidebar-item">
-    <a href="managementpengguna.html" class='sidebar-link'>
-        <i class="bi bi-journal-check"></i>
-        <span>Management Pengguna</span>
-    </a>
-</li>
 <li
 class="sidebar-item">
 <a href="nilai.html" class='sidebar-link'>
-    <i class="bi bi-gear"></i>
+    <i class="bi bi-list-task"></i>
     <span>Nilai</span>
 </a>
 </li>
     <li
     class="sidebar-item">
-    <a href="notif.html" class='sidebar-link'>
-        <i class="bi bi-bell"></i>
+    <a href="profil.html" class='sidebar-link'>
+        <i class="bi bi-person"></i>
         <span>Profil</span>
     </a>
     </li>
@@ -132,8 +137,16 @@ class="sidebar-item">
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
+            <body>
+                <i class="bi bi-arrow-left-circle back-icon" onclick="goToSettings()"></i> <!-- Ikon panah -->
             
-            
+                <script>
+                    function goToSettings() {
+                        window.location.href = "pengaturan.html"; // Arahkan pengguna ke halaman pengaturan
+                    }
+                </script>
+      </body>
+       <br>     
 <div class="page-heading">
     <div class="page-title">
         <div class="row">
